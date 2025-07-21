@@ -40,7 +40,7 @@ def backward_substitution(U, y):
 # Define coefficient matrix A and right-hand side b
 A = np.array([
     [1, -1, 3, 2],
-    [-1, 5, -5, -2],
+    [1, 5, -5, -2],
     [3, -5, 19, 3],
     [2, -2, 3, 21]
 ], dtype=float)
@@ -52,6 +52,6 @@ L, U = doolittle_lu_decomposition(A)
 y = forward_substitution(L, b)
 x = backward_substitution(U, y)
 
-print("Solution vector x:")
-for i, val in enumerate(x, start=1):
-    print(f"x{i} = {val:.2f}")
+print("L matrix:\n", L)
+print("\nU matrix:\n", U)
+print("\nSolution vector x:\n", x)
